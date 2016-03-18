@@ -6,27 +6,45 @@ body {
 }
 .container {
 	width: 30%;
-	min-height: 400px;
+	min-height: 120px;
 
 	margin: 0 auto;
 	border-bottom: 1px solid #E1E8ED;
 
+	position: relative;
+
 	background-color: #FFFFFF;
 }
 
-.tweet, .timestamp {
+.tweet {
 	width: 70%; 
-	margin: 20px auto 0 auto;
+
+	position: relative;
+
+	top: 25px;
+
+	margin: 0 auto;
 }
 
+.timestamp {
+	position: absolute;
+
+	bottom: 10px;
+	left: 5px;
+
+}
+
+
+/*=====================
+Font Styles
+=======================*/
 .tweet {
 	font-size: 1.0em;
 }
 
 .timestamp {
-	font-size: 0.5em;
+	font-size: 0.7em;
 }
-
 /*=====================
 Buttons
 =======================*/
