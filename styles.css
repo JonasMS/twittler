@@ -16,14 +16,21 @@ body {
 	background-color: #FFFFFF;
 }
 
-.tweet {
+.user, .tweet {
 	width: 70%; 
 
 	position: relative;
 
-	top: 25px;
-
 	margin: 0 auto;
+}
+
+.user {
+	top: 25px;
+}
+
+.tweet {
+	top: 30px;
+
 }
 
 .timestamp {
@@ -38,7 +45,11 @@ body {
 /*=====================
 Font Styles
 =======================*/
-.tweet {
+.user {
+	font-weight: 600;
+}
+
+.user, .tweet {
 	font-size: 1.0em;
 }
 
