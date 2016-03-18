@@ -1,0 +1,35 @@
+/*=====================
+Main
+=======================*/
+body {
+	background-color: #F5F8FA;
+}
+.container {
+	width: 30%;
+	min-height: 400px;
+
+	margin: 0 auto;
+	border-bottom: 1px solid #E1E8ED;
+
+	background-color: #FFFFFF;
+}
+
+.tweet, .timestamp {
+	width: 70%; 
+	margin: 20px auto 0 auto;
+}
+
+.tweet {
+	font-size: 1.0em;
+}
+
+.timestamp {
+	font-size: 0.5em;
+}
+
+/*=====================
+Buttons
+=======================*/
+
+
+

@@ -3,6 +3,7 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <script>
@@ -14,11 +15,32 @@
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
+
+          //create elements
+          var $container = $('<div></div>');
           var $tweet = $('<div></div>');
+          var $timestamp = $('<div></div>');
+
+          //insert content into elements
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
+          $timestamp.text('At ' + tweet.created_at);
+
+          //add elements to DOM
+          $container.appendTo($body);
+          $tweet.appendTo($container);
+          $timestamp.appendTo($container);
+
+
+          //add styling to elements
+          $container.addClass('container');
+          $tweet.addClass('tweet');
+
+
           index -= 1;
+
         }
+
+        //Problem: design interface
 
       });
 
