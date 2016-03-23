@@ -6,13 +6,15 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
+    <div class='feed'></div>
     <script>
 
       $(document).ready(function(){
 
         var loadFeed = function(username){
           var $body = $('body');
-          $body.html('');
+          var $feed = $('.feed');
+          $feed.html('');
 
           // var index = streams.home.length - 1;
 
@@ -24,7 +26,6 @@
             var tweet = feed[index];
 
             //create elements
-            //TODO: create var div = '<div></div>' for efficiency
             div = '<div></div>';
             var $container = $(div);
             var $username = $('<span></span>');
@@ -39,7 +40,7 @@
             $timestamp.text('At ' + tweet.created_at);
 
             //add elements to DOM
-            $container.appendTo($body);
+            $container.appendTo($feed);
             $user.appendTo($container);
             $username.appendTo($user);
             $tweet.appendTo($container);
@@ -52,39 +53,37 @@
             $tweet.addClass('tweet');
             $timestamp.addClass('timestamp');
 
-
             index -= 1;
           }
 
         };
 
+        //Initialize Home Feed
         loadFeed('home');
 
-        $('.user .username').on('click', function(){
-          var username = $(this).text().slice(1, -1);
-          loadFeed(username);
+        //Create Button(s)
+        var $updateBtn = $('<button></button');
+        $updateBtn.html('Update');
+        $updateBtn.appendTo('body');
+        $updateBtn.addClass('updateBtn');
+     
+        //Feed Functions
+        var linkToUsers = function(){
+            $('.user .username').on('click', function(){
+            var username = $(this).text().slice(1, -1);
+            loadFeed(username);
+            $('.updateBtn').html('Home');
+          });
+        };
+
+        linkToUsers();
+
+        //Button Handlers
+        $('.updateBtn').on('click', function(){
+          loadFeed('home');
+          $('.updateBtn').html('Update');
+          linkToUsers();
         });
-
-        // $('.user .username').on('mouseenter', function(){
-        //   console.log('test succesful');
-        // });
-
-
-
-        /*
-        Problem: access a user's timeline by clicking on his username
-        Solution:
-          * streams.users access object full of follwed users
-          1. make username a clickable element
-          2. give username element val = username
-          3. on 'click' 
-            i. clear body
-            ii. load user's feed
-
-
-        */
-
-
       });
 
     </script>

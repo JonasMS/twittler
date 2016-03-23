@@ -4,8 +4,16 @@ Main
 body {
 	background-color: #F5F8FA;
 }
-.container {
+
+.feed {
+	height: 100%;
 	width: 30%;
+	margin: 0 auto;
+
+}
+
+.container {
+	width: 100%;
 	min-height: 120px;
 
 	margin: 0 auto;
@@ -39,6 +47,21 @@ body {
 	bottom: 10px;
 	left: 5px;
 
+}
+
+.updateBtn {
+	position: fixed;
+
+	height: 50px;
+	width: 100px;
+
+	color: #fff;
+	background-color: #1da1f2;;
+
+	top: 50px;
+	left: 280px;
+
+	border-radius: 5px;
 }
 
 
